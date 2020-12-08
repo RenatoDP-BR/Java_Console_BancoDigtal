@@ -21,8 +21,9 @@ public class Cliente {
 		this.nomeCliente = nomeCliente; 
 	}	
 	
-	public void pesquisaCliente(Integer cpfCliente) {
-
+	public void pesquisaCliente(Integer cpfCliente, Object Cliente) {
+         
+		
 	}
 
 	public void cadastraCliente(Integer cpfCliente, String nomeCliente) {
