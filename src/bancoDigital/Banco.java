@@ -6,10 +6,6 @@ import java.util.Scanner;
 public class Banco {
 
 	public static void main(String[] args) {
-	   
-//		ContaCliente contacliente;
-		
-//		Cliente cliente; 
 		
 		String fim = "N"; 
 
@@ -52,7 +48,13 @@ public class Banco {
 				    	
 				    	ContaCliente.ListaDeContas.add(novaConta);
 				    	
-			    		System.out.print("<<< Conta Criada com Sucesso >>>");
+				    	System.out.print("<<< Conta Criada:");
+				    	System.out.print("<<< Numero da Conta: " + novaConta.getNumContaCliente());
+				    	System.out.print("<<< CPF da Conta   : " + novaConta.getCpfCliente());
+				    	System.out.print("<<< Saldo da Conta : " + novaConta.getSaldoContaCliente());
+				    	System.out.print("<<< Informações do Cliente >>>");
+				    	System.out.print("<<< CPF do Cliente : " + novoCliente.getCpfCliente());
+			    		System.out.print("<<< Nome do Cliente: " + novoCliente.getNomeCliente());
 			    		
 			    	}
 			    	
