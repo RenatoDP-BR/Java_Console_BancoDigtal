@@ -1,19 +1,15 @@
 package bancoDigital;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class Banco {
 
 	public static void main(String[] args) {
 	   
-		ContaCliente contacliente; 
+		ContaCliente contacliente;
 		
-		Cliente cliente;
-		
-		Cliente[] listaClientes = new Cliente[30];
-		ContaCliente[] listaContas = new ContaCliente[60];
+		Cliente cliente; 
 		
 		String fim = "N"; 
 
@@ -24,7 +20,8 @@ public class Banco {
 			System.out.println("(S)acar $$$");
 			System.out.println("(D)epositar $$$"); 
 			System.out.println("(T)ransferir entre C/C"); 
-			System.out.println("(C)riar nova Conta"); 
+			System.out.println("(C)riar nova Conta/Cliente");
+			
 			System.out.println("(X) SAIR");
 			System.out.println("_____________Opção:");
 			String opcaoUsuario = entrada.next();
@@ -32,18 +29,33 @@ public class Banco {
 			switch (opcaoUsuario) {
 	     		case "X":
 	     		    fim = "S";
+	     		    
 			    case "C": 
-			    	System.out.print("Me informe o cpf:");
-			    	Integer cpfDigitado = Integer.parseInt(entrada.nextLine());
-			    	String nomePesquisado = pesquisaCliente(cpfDigitado, listaClientes); 
-			    	if nomePesquisado = null {
-			    	   System.out.print("Me informe o Nome do Cliente:");
-			    	   String nomePesquisado = entrada.next();
-			    	}
-			    		
-					cliente.cadastraCliente(cpfDigitado, ); 
-
 					
+			    	System.out.print("Me informe o cpf do cliente:");
+			    	Integer cpfDigitado = Integer.parseInt(entrada.nextLine());
+			    	
+			    	ContaCliente novaConta = new ContaCliente(cpfDigitado);
+			    	
+			    	if (novaConta.consultaSaldoConta(novaConta.getNumContaCliente()) == 0.0) {
+
+			    		System.out.print("Me informe o nome do cliente:");
+				    	String nomeDigitado = entrada.nextLine();
+				    	
+				    	Cliente novoCliente = new Cliente(cpfDigitado, nomeDigitado);  
+				    	
+				    	Cliente.ListaDeClientes.add(novoCliente);
+				    	
+			    		System.out.print("Me informe o saldo do cliente:");
+				    	Double saldoDigitado = Double.parseDouble(entrada.nextLine());
+				    	novaConta.setSaldoContaCliente(saldoDigitado);
+				    	
+				    	ContaCliente.ListaDeContas.add(novaConta);
+				    	
+			    		System.out.print("<<< Conta Criada com Sucesso >>>");
+			    		
+			    	}
+			    	
 			    case "T": 
 			    	System.out.println("Opcao T em construcao"); 
 			    case "D": 
@@ -55,14 +67,6 @@ public class Banco {
 		
 		System.out.print(">>>> Volte Sempre <<<<");
 		
-	}
-	
-	public static void pesquisaCliente(Integer cpfCliente, List listaClientes) {
-		for (int i = 0; i <= listaClientes.lastIndexOf())
-		for (Object object : listaClientes) {
-		  if cpfCliente = listaClientes.
-		}
-		return 
 	}
 
 }
