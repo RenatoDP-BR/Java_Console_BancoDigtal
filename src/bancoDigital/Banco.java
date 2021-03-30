@@ -7,9 +7,9 @@ public class Banco {
 
 	public static void main(String[] args) {
 	   
-		ContaCliente contacliente;
+//		ContaCliente contacliente;
 		
-		Cliente cliente; 
+//		Cliente cliente; 
 		
 		String fim = "N"; 
 
